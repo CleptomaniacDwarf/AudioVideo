@@ -6,8 +6,6 @@ const style = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  border: 'solid 1px #ddd',
-
 };
 
 class App extends React.Component {
@@ -15,25 +13,35 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      width: 200,
-      height: 200,
-      x: 10,
-      y: 10,
+      width1: 200,
+      height1: 200,
+      x1: 10,
+      y1: 10,
+      width2: 200,
+      height2: 200,
+      x2: 10,
+      y2: 10,
+      width3: 200,
+      height3: 200,
+      x3: 10,
+      y3: 10,
+      width4: 200,
+      height4: 200,
+      x4: 10,
+      y4: 10,
     }
   }
 
   render() {
-    const url = "https://r5---sn-4g5e6ne6.c.drive.google.com/videoplayback?id=eefd5d769544beff&itag=59&source=webdrive&requiressl=yes&mm=30&mn=sn-4g5e6ne6&ms=nxu&mv=m&pl=17&ttl=transient&ei=6F73Wq_yLI6c-wW204LgBw&susc=dr&driveid=1WbL2zYIzfnlIRPAlDM-RBElXho80JXEv&app=texmex&mime=video/mp4&lmt=1526125313629889&mt=1526161034&ip=46.223.254.84&ipbits=0&expire=1526175528&cp=QVNHWEJfVFVQSVhOOlJrbF9lMWZaeWR1&sparams=ip,ipbits,expire,id,itag,source,requiressl,mm,mn,ms,mv,pl,ttl,ei,susc,driveid,app,mime,lmt,cp&signature=AB402C017195D43EF472B3A66E342590F6160468.4A8E64256AFFF9219C7843719A9AECD263A1E7DE&key=ck2&cpn=nXdHnlYnnFtsN5cE&c=WEB_EMBEDDED_PLAYER&cver=20180510";
-
-    return (
+      return (
       <div>
         <Rnd
           style={style}
           enableResizing={{
             right: true
           }}
-          size={{ width: this.state.width, height: this.state.height }}
-          position={{ x: this.state.x, y: this.state.y }}
+          size={{ width: this.state.width1, height: this.state.height1 }}
+          position={{ x: this.state.x1, y: this.state.y1 }}
           disableDragging
           onResize={(e, direction, ref, delta, position) => {
             this.setState({
@@ -44,8 +52,8 @@ class App extends React.Component {
           }}
         >
           <div style={{
-            width: '300px',
-            height: '300px',
+            //width: '300px',
+            height: '720px',
             overflow: 'hidden',
           }}>
             <video autoPlay
@@ -55,7 +63,7 @@ class App extends React.Component {
                 height: '100%',
               }}>
               <source
-                src={url} />
+                src="https://webuser.hs-furtwangen.de/~kroenert/AudioVideo/Melody.mp4" />
               />
     </video>
           </div>
@@ -66,8 +74,8 @@ class App extends React.Component {
           enableResizing={{
             right: true
           }}
-          size={{ width: this.state.width, height: this.state.height }}
-          position={{ x: 210, y: this.state.y }}
+          size={{ width: this.state.width2, height: this.state.height2 }}
+          position={{ x: 210, y: this.state.y2 }}
           disableDragging
           onResize={(e, direction, ref, delta, position) => {
             this.setState({
@@ -78,8 +86,8 @@ class App extends React.Component {
           }}
         >
           <div style={{
-            width: '300px',
-            height: '300px',
+            //width: '300px',
+            height: '720px',
             overflow: 'hidden',
           }}>
             <video autoPlay
@@ -89,7 +97,41 @@ class App extends React.Component {
                 height: '100%',
               }}>
               <source
-                src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4" />
+                  src="https://webuser.hs-furtwangen.de/~kroenert/AudioVideo/Bass.mp4" />
+              />
+    </video>
+          </div>
+
+        </Rnd>
+        <Rnd
+          style={style}
+          enableResizing={{
+            right: true
+          }}
+          size={{ width: this.state.width3, height: this.state.height3 }}
+          position={{ x: 410, y: this.state.y3 }}
+          disableDragging
+          onResize={(e, direction, ref, delta, position) => {
+            this.setState({
+              width: ref.offsetWidth,
+              height: ref.offsetHeight,
+              ...position,
+            });
+          }}
+        >
+          <div style={{
+            //width: '300px',
+            height: '720px',
+            overflow: 'hidden',
+          }}>
+            <video autoPlay
+              style={{
+                objectFit: 'cover',
+                width: '100%',
+                height: '100%',
+              }}>
+              <source
+                  src="https://webuser.hs-furtwangen.de/~kroenert/AudioVideo/Drums.mp4" />
               />
     </video>
           </div>
@@ -101,8 +143,8 @@ class App extends React.Component {
           enableResizing={{
             right: true
           }}
-          size={{ width: this.state.width, height: this.state.height }}
-          position={{ x: 410, y: this.state.y }}
+          size={{ width: this.state.width4, height: this.state.height4 }}
+          position={{ x: 610, y: this.state.y4 }}
           disableDragging
           onResize={(e, direction, ref, delta, position) => {
             this.setState({
@@ -113,8 +155,8 @@ class App extends React.Component {
           }}
         >
           <div style={{
-            width: '300px',
-            height: '300px',
+            //width: '300px',
+            height: '720px',
             overflow: 'hidden',
           }}>
             <video autoPlay
@@ -124,42 +166,7 @@ class App extends React.Component {
                 height: '100%',
               }}>
               <source
-                src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4" />
-              />
-    </video>
-          </div>
-
-        </Rnd>
-
-        <Rnd
-          style={style}
-          enableResizing={{
-            right: true
-          }}
-          size={{ width: this.state.width, height: this.state.height }}
-          position={{ x: 610, y: this.state.y }}
-          disableDragging
-          onResize={(e, direction, ref, delta, position) => {
-            this.setState({
-              width: ref.offsetWidth,
-              height: ref.offsetHeight,
-              ...position,
-            });
-          }}
-        >
-          <div style={{
-            width: '300px',
-            height: '300px',
-            overflow: 'hidden',
-          }}>
-            <video autoPlay
-              style={{
-                objectFit: 'cover',
-                width: '100%',
-                height: '100%',
-              }}>
-              <source
-                src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4" />
+                  src="https://webuser.hs-furtwangen.de/~kroenert/AudioVideo/Vox.mp4" />
               />
     </video>
           </div>
