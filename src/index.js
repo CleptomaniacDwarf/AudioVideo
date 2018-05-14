@@ -44,11 +44,11 @@ class App extends React.Component {
           disableDragging
           onResize={(e, direction, ref, delta, position) => {
             this.setState({
-              width: ref.offsetWidth,
-              height: ref.offsetHeight,
-              x2: this.state.x2 + ref.offsetWidth,
-              x3: this.state.x3 + ref.offsetWidth,
-              x4: this.state.x4 + ref.offsetWidth,
+              width1: ref.offsetWidth,
+              height1: ref.offsetHeight,
+              x2: this.state.x1 + ref.offsetWidth,
+              x3: this.state.x2 + ref.offsetWidth,
+              x4: this.state.x3 + ref.offsetWidth,
             });
           }}
         >
@@ -82,15 +82,17 @@ class App extends React.Component {
           disableDragging
           onResize={(e, direction, ref, delta, position) => {
             this.setState({
-              width: ref.offsetWidth,
-              height: ref.offsetHeight,
-              ...position
+              width2: ref.offsetWidth,
+              height2: ref.offsetHeight,
+              x2: this.state.x2 + ref.offsetWidth,
+              x3: this.state.x2 + ref.offsetWidth,
+              x4: this.state.x3 + ref.offsetWidth,
             });
           }}
         >
           <div
             style={{
-              //width: '300px',
+              width: this.state.width2,
               height: "720px",
               overflow: "hidden"
             }}
@@ -118,15 +120,17 @@ class App extends React.Component {
           disableDragging
           onResize={(e, direction, ref, delta, position) => {
             this.setState({
-              width: ref.offsetWidth,
-              height: ref.offsetHeight,
-              ...position
+              width3: ref.offsetWidth,
+              height3: ref.offsetHeight,
+              x2: this.state.x2 + ref.offsetWidth,
+              x3: this.state.x2 + ref.offsetWidth,
+              x4: this.state.x3 + ref.offsetWidth,
             });
           }}
         >
           <div
             style={{
-              //width: '300px',
+              width: this.state.width3,
               height: "720px",
               overflow: "hidden"
             }}
@@ -155,15 +159,17 @@ class App extends React.Component {
           disableDragging
           onResize={(e, direction, ref, delta, position) => {
             this.setState({
-              width: ref.offsetWidth,
-              height: ref.offsetHeight,
-              ...position
+              width4: ref.offsetWidth,
+              height4: ref.offsetHeight,
+              x2: this.state.x2 + ref.offsetWidth,
+              x3: this.state.x2 + ref.offsetWidth,
+              x4: this.state.x3 + ref.offsetWidth,
             });
           }}
         >
           <div
             style={{
-              //width: '300px',
+              width: this.state.width4,
               height: "720px",
               overflow: "hidden"
             }}
