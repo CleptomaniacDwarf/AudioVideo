@@ -43,12 +43,16 @@ class App extends React.Component {
           position={{ x: this.state.x1, y: this.state.y1 }}
           disableDragging
           onResize={(e, direction, ref, delta, position) => {
+            const x2 = this.state.x1 + ref.offsetWidth;
+            const x3 = x2 + this.state.width2;
+            const x4 = x3 + this.state.width3;
+
             this.setState({
               width1: ref.offsetWidth,
               height1: ref.offsetHeight,
-              x2: this.state.x1 + ref.offsetWidth,
-              x3: this.state.x2 + ref.offsetWidth,
-              x4: this.state.x3 + ref.offsetWidth,
+              x2: x2,
+              x3: x3,
+              x4: x4
             });
           }}
         >
@@ -81,12 +85,14 @@ class App extends React.Component {
           position={{ x: this.state.x2, y: this.state.y2 }}
           disableDragging
           onResize={(e, direction, ref, delta, position) => {
+            const x3 = this.state.x2 + ref.offsetWidth;
+            const x4 = x3 + this.state.width3;
+
             this.setState({
               width2: ref.offsetWidth,
               height2: ref.offsetHeight,
-              x2: this.state.x2 + ref.offsetWidth,
-              x3: this.state.x2 + ref.offsetWidth,
-              x4: this.state.x3 + ref.offsetWidth,
+              x3: x3,
+              x4: x4
             });
           }}
         >
@@ -119,12 +125,12 @@ class App extends React.Component {
           position={{ x: this.state.x3, y: this.state.y3 }}
           disableDragging
           onResize={(e, direction, ref, delta, position) => {
+            const x4 = this.state.x3 + ref.offsetWidth;
+
             this.setState({
               width3: ref.offsetWidth,
               height3: ref.offsetHeight,
-              x2: this.state.x2 + ref.offsetWidth,
-              x3: this.state.x2 + ref.offsetWidth,
-              x4: this.state.x3 + ref.offsetWidth,
+              x4: x4
             });
           }}
         >
@@ -160,10 +166,7 @@ class App extends React.Component {
           onResize={(e, direction, ref, delta, position) => {
             this.setState({
               width4: ref.offsetWidth,
-              height4: ref.offsetHeight,
-              x2: this.state.x2 + ref.offsetWidth,
-              x3: this.state.x2 + ref.offsetWidth,
-              x4: this.state.x3 + ref.offsetWidth,
+              height4: ref.offsetHeight
             });
           }}
         >
