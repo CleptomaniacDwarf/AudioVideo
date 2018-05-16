@@ -27,7 +27,7 @@ class App extends React.Component {
       width4: 320,
       height4: 720,
       x4: 970,
-      y4: 10
+      y4: 10,
     };
   }
 
@@ -37,9 +37,12 @@ class App extends React.Component {
         <Rnd
           style={style}
           enableResizing={{
-            right: true
+            right: true,
           }}
-          size={{ width: this.state.width1, height: this.state.height1 }}
+          size={{ 
+            width: this.state.width1, 
+            height: this.state.height1,
+            }}
           position={{ x: this.state.x1, y: this.state.y1 }}
           disableDragging
           onResize={(e, direction, ref, delta, position) => {
@@ -49,7 +52,6 @@ class App extends React.Component {
 
             this.setState({
               width1: ref.offsetWidth,
-              height1: ref.offsetHeight,
               x2: x2,
               x3: x3,
               x4: x4
@@ -60,7 +62,9 @@ class App extends React.Component {
             style={{
               width: this.state.width1,
               height: "720px",
-              overflow: "hidden"
+              overflow: "hidden",
+              minWidth: 213.33,
+              maxWidth: 640,
             }}
           >
             <video
@@ -68,7 +72,7 @@ class App extends React.Component {
               style={{
                 objectFit: "cover",
                 width: "100%",
-                height: "100%"
+                height: "100%",
               }}
             >
               <source src="https://webuser.hs-furtwangen.de/~kroenert/AudioVideo/Melody.mp4" />
@@ -100,7 +104,9 @@ class App extends React.Component {
             style={{
               width: this.state.width2,
               height: "720px",
-              overflow: "hidden"
+              overflow: "hidden",
+              minWidth: 213.33,
+              maxWidth: 640,
             }}
           >
             <video
@@ -138,7 +144,9 @@ class App extends React.Component {
             style={{
               width: this.state.width3,
               height: "720px",
-              overflow: "hidden"
+              overflow: "hidden",
+              minWidth: 213.33,
+              maxWidth: 640,
             }}
           >
             <video
@@ -174,7 +182,9 @@ class App extends React.Component {
             style={{
               width: this.state.width4,
               height: "720px",
-              overflow: "hidden"
+              overflow: "hidden",
+              minWidth: 213.33,
+              maxWidth: 640,
             }}
           >
             <video
