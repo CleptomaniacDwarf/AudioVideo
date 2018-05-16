@@ -49,7 +49,7 @@ class App extends React.Component {
             const x2 = this.state.x1 + ref.offsetWidth;
             const x3 = x2 + this.state.width2;
             const x4 = x3 + this.state.width3;
-
+            
             this.setState({
               width1: ref.offsetWidth,
               x2: x2,
@@ -65,6 +65,7 @@ class App extends React.Component {
               overflow: "hidden",
               minWidth: 213.33,
               maxWidth: 640,
+              resizeGrid: [42.67, 42.67],
             }}
           >
             <video
