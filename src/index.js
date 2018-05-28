@@ -35,7 +35,7 @@ class App extends React.Component {
     return (
       <div>
         <Rnd
-          id={"drums"}
+          id={"melody"}
           minWidth={213.33}
           maxWidth={640} 
           resizeGrid={[42.67, 1]}
@@ -84,6 +84,7 @@ class App extends React.Component {
           </div>
         </Rnd>
         <Rnd
+          id={"bass"}
           minWidth={213.33}
           maxWidth={640} 
           resizeGrid={[42.67, 1]}
@@ -128,6 +129,7 @@ class App extends React.Component {
           </div>
         </Rnd>
         <Rnd
+          id={"drums"}
           minWidth={213.33}
           maxWidth={640} 
           resizeGrid={[42.67, 1]}
@@ -171,6 +173,7 @@ class App extends React.Component {
         </Rnd>
 
         <Rnd
+          id={"voice"}
           minWidth={213.33}
           maxWidth={640}  
           resizeGrid={[42.67, 1]}       
