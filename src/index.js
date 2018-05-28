@@ -37,10 +37,10 @@ class App extends React.Component {
         <Rnd
           minWidth={213.33}
           maxWidth={640} 
+          resizeGrid={[42.67, 1]}
           style={style}
           enableResizing={{
             right: true,
-            resizeGrid: [42.67, 42.67],
           }}
           size={{ 
             width: this.state.width1, 
@@ -85,6 +85,7 @@ class App extends React.Component {
         <Rnd
           minWidth={213.33}
           maxWidth={640} 
+          resizeGrid={[42.67, 1]}
           style={style}
           enableResizing={{
             right: true
@@ -128,6 +129,7 @@ class App extends React.Component {
         <Rnd
           minWidth={213.33}
           maxWidth={640} 
+          resizeGrid={[42.67, 1]}
           style={style}
           enableResizing={{
             right: true
@@ -169,7 +171,8 @@ class App extends React.Component {
 
         <Rnd
           minWidth={213.33}
-          maxWidth={640}         
+          maxWidth={640}  
+          resizeGrid={[42.67, 1]}       
           style={style}
           enableResizing={{
             right: true
