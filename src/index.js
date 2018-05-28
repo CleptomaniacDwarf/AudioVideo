@@ -35,6 +35,7 @@ class App extends React.Component {
     return (
       <div>
         <Rnd
+          id={"drums"}
           minWidth={213.33}
           maxWidth={640} 
           resizeGrid={[42.67, 1]}
