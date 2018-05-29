@@ -212,7 +212,7 @@ class App extends React.Component {
         </Rnd>
 
         <Rnd
-          id={"voice"}
+          id={"vox"}
           minWidth={213.33}
           maxWidth={640}  
           resizeGrid={[42.67, 1]}       
