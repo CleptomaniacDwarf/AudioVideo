@@ -33,40 +33,40 @@ class App extends React.Component {
 
   checkWidth(identity) {
     if (identity == "melody") {
-      var total = width2 + width3 + width4;
-      var proportion2 = width2 / total;
-      var proportion3 = width3 / total;
-      var proportion4 = width4 / total;
-      width2 = width2*proportion2;
-      width3 = width3*proportion3;
-      width4 = width4*proportion4;
+      var total = this.state.width2 + this.state.width3 + this.state.width4;
+      var proportion2 = this.state.width2 / total;
+      var proportion3 = this.state.width3 / total;
+      var proportion4 = this.state.width4 / total;
+      this.state.width2 = this.state.width2*proportion2;
+      this.state.width3 = this.state.width3*proportion3;
+      this.state.width4 = this.state.width4*proportion4;
     }
     if (identity == "bass") {
-      var total = width1 + width3 + width4;
-      var proportion1 = width1 / total;
-      var proportion3 = width3 / total;
-      var proportion4 = width4 / total;
-      width1 = width1*proportion1;
-      width3 = width3*proportion3;
-      width4 = width4*proportion4;
+      var total = this.state.width1 + this.state.width3 + this.state.width4;
+      var proportion1 = this.state.width1 / total;
+      var proportion3 = this.state.width3 / total;
+      var proportion4 = this.state.width4 / total;
+      this.state.width1 = this.state.width1*proportion1;
+      this.state.width3 = this.state.width3*proportion3;
+      this.state.width4 = this.state.width4*proportion4;
     }
     if (identity == "drums") {
-      var total = width1 + width2 + width4;
-      var proportion1 = width1 / total;
-      var proportion2 = width2 / total;
-      var proportion4 = width4 / total;
-      width1 = width1*proportion1;
-      width2 = width2*proportion2;
-      width4 = width4*proportion4;
+      var total = this.state.width1 + this.state.width2 + this.state.width4;
+      var proportion1 = this.state.width1 / total;
+      var proportion2 = this.state.width2 / total;
+      var proportion4 = this.state.width4 / total;
+      this.state.width1 = this.state.width1*proportion1;
+      this.state.width2 = this.state.width2*proportion2;
+      this.state.width4 = this.state.width4*proportion4;
     }
     if (identity == "vox") {
-      var total = width1 + width2 + width3;
-      var proportion1 = width1 / total;
-      var proportion2 = width2 / total;
-      var proportion3 = width3 / total;
-      width1 = width1*proportion2;
-      width2 = width2*proportion3;
-      width3 = width3*proportion4;
+      var total = this.state.width1 + this.state.width2 + this.state.width3;
+      var proportion1 = this.state.this.state.width1 / total;
+      var proportion2 = this.state.width2 / total;
+      var proportion3 = this.state.width3 / total;
+      this.state.width1 = this.state.width1*proportion2;
+      this.state.width2 = this.state.width2*proportion3;
+      this.state.width3 = this.state.width3*proportion4;
     }
   }
 
