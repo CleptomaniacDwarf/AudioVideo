@@ -31,7 +31,13 @@ class App extends React.Component {
     };
   }
 
-  CheckWidth (i) {
+  checkWidth(identity) {
+    if (identity == "melody") {
+      var total = width2 + width3 + width4;
+      var proportion2 = width2 / total;
+      var proportion3 = width3 / total;
+      var proportion4 = width4 / total;
+    }
   }
 
   render() {
