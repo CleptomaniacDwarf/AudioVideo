@@ -38,6 +38,24 @@ class App extends React.Component {
       var proportion3 = width3 / total;
       var proportion4 = width4 / total;
     }
+    if (identity == "bass") {
+      var total = width1 + width3 + width4;
+      var proportion1 = width1 / total;
+      var proportion3 = width3 / total;
+      var proportion4 = width4 / total;
+    }
+    if (identity == "drums") {
+      var total = width1 + width2 + width4;
+      var proportion1 = width1 / total;
+      var proportion2 = width2 / total;
+      var proportion4 = width4 / total;
+    }
+    if (identity == "vox") {
+      var total = width1 + width2 + width3;
+      var proportion1 = width1 / total;
+      var proportion2 = width2 / total;
+      var proportion3 = width3 / total;
+    }
   }
 
   render() {
