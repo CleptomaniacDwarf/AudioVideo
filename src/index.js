@@ -100,7 +100,7 @@ class App extends React.Component {
               x3: x3,
               x4: x4
             });
-            checkWidth(id);
+            checkWidth(e.id);
           }}
         >
           <div
@@ -146,7 +146,7 @@ class App extends React.Component {
               x3: x3,
               x4: x4
             });
-            checkWidth(id);
+            checkWidth(e.id);
           }}
         >
           <div
@@ -190,7 +190,7 @@ class App extends React.Component {
               height3: ref.offsetHeight,
               x4: x4
             });
-            checkWidth(id);
+            checkWidth(e.id);
           }}
         >
           <div
@@ -232,6 +232,7 @@ class App extends React.Component {
               width4: ref.offsetWidth,
               height4: ref.offsetHeight,
             });
+            checkWidth(e.id);
           }}
         >
           <div
