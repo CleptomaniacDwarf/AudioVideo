@@ -92,7 +92,6 @@ class App extends React.Component {
             const x2 = this.state.x1 + ref.offsetWidth;
             const x3 = x2 + this.state.width2;
             const x4 = x3 + this.state.width3;
-            checkWidth(id);
             //debugger;
             
             this.setState({
@@ -101,6 +100,7 @@ class App extends React.Component {
               x3: x3,
               x4: x4
             });
+            checkWidth(id);
           }}
         >
           <div
@@ -138,7 +138,6 @@ class App extends React.Component {
           onResize={(e, direction, ref, delta, position) => {
             const x3 = this.state.x2 + ref.offsetWidth;
             const x4 = x3 + this.state.width3;
-            checkWidth(id);
             //debugger;
 
             this.setState({
@@ -147,6 +146,7 @@ class App extends React.Component {
               x3: x3,
               x4: x4
             });
+            checkWidth(id);
           }}
         >
           <div
@@ -183,7 +183,6 @@ class App extends React.Component {
           disableDragging
           onResize={(e, direction, ref, delta, position) => {
             const x4 = this.state.x3 + ref.offsetWidth;
-            checkWidth(id);
             //debugger;
 
             this.setState({
@@ -191,6 +190,7 @@ class App extends React.Component {
               height3: ref.offsetHeight,
               x4: x4
             });
+            checkWidth(id);
           }}
         >
           <div
@@ -227,11 +227,10 @@ class App extends React.Component {
           position={{ x: this.state.x4, y: this.state.y4 }}
           disableDragging
           onResize={(e, direction, ref, delta, position) => {
-            checkWidth(id);
             // debugger;
             this.setState({
               width4: ref.offsetWidth,
-              height4: ref.offsetHeight
+              height4: ref.offsetHeight,
             });
           }}
         >
