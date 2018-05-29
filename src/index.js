@@ -31,6 +31,9 @@ class App extends React.Component {
     };
   }
 
+  CheckWidth (i) {
+  }
+
   render() {
     return (
       <div>
