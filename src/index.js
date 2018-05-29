@@ -98,8 +98,8 @@ class App extends React.Component {
               width1: ref.offsetWidth,
               x2: x2,
               x3: x3,
-              x4: x4
-            });
+              x4: x4,
+             });
             checkWidth(e.id);
           }}
         >
