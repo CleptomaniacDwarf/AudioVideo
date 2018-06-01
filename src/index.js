@@ -28,8 +28,13 @@ class App extends React.Component {
       height4: 720,
       x4: 970,
       y4: 10,
-    };
-  }
+      total: 1280,
+      proportion1: 1,
+      proportion2: 1,
+      proportion3: 1,
+      proportion4: 1,
+      };
+    }
 
   checkWidth(identity) {
     if (identity == "melody") {
@@ -99,8 +104,15 @@ class App extends React.Component {
               x2: x2,
               x3: x3,
               x4: x4,
+              this.state.total = this.state.width2 + this.state.width3 + this.state.width4;
+              this.state.proportion2 = this.state.width2 / this.state.total;
+              this.state.proportion3 = this.state.width3 / this.state.total;
+              this.state.proportion4 = this.state.width4 / this.state.total;
+              this.state.width2 = this.state.width2 * this.state.proportion2;
+              this.state.width3 = this.state.width3 * this.state.proportion3;
+              this.state.width4 = this.state.width4 * this.state.proportion4;
              });
-            checkWidth(e.id);
+            //checkWidth(e.id);
           }}
         >
           <div
