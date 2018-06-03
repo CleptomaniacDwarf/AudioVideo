@@ -105,13 +105,13 @@ class App extends React.Component {
               x3: x3,
               x4: x4,
               //Breitenberechnung
-              this.state.total: this.state.width2 + this.state.width3 + this.state.width4,
-              this.state.proportion2: this.state.width2 / this.state.total,
-              this.state.proportion3: this.state.width3 / this.state.total,
-              this.state.proportion4: this.state.width4 / this.state.total,
-              this.state.width2: this.state.width2 * this.state.proportion2,
-              this.state.width3: this.state.width3 * this.state.proportion3,
-              this.state.width4: this.state.width4 * this.state.proportion4,
+              total: width2 + width3 + width4,
+              proportion2: width2 / total,
+              proportion3: width3 / total,
+              proportion4: width4 / total,
+              width2: width2 * proportion2,
+              width3: width3 * proportion3,
+              width4: width4 * proportion4,
              });
             //checkWidth(e.id);
           }}
