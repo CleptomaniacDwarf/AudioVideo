@@ -66,7 +66,7 @@ class App extends React.Component {
     }
     if (identity == "vox") {
       this.state.total = this.state.width1 + this.state.width2 + this.state.width3;
-      this.state.proportion1 = this.state.this.state.width1 / this.state.total;
+      this.state.proportion1 = this.state.width1 / this.state.total;
       this.state.proportion2 = this.state.width2 / this.state.total;
       this.state.proportion3 = this.state.width3 / this.state.total;
       this.state.width1 = this.state.width1 * this.state.proportion2;
@@ -100,12 +100,13 @@ class App extends React.Component {
             //debugger;
             
             this.setState({
+              //Positionierung
               width1: ref.offsetWidth,
               x2: x2,
               x3: x3,
               x4: x4,
               //Breitenberechnung
-              total: width2 + width3 + width4,
+              total: 1280 - ref.offsetWidth,
               proportion2: width2 / total,
               proportion3: width3 / total,
               proportion4: width4 / total,
@@ -157,9 +158,17 @@ class App extends React.Component {
               width2: ref.offsetWidth,
               height2: ref.offsetHeight,
               x3: x3,
-              x4: x4
+              x4: x4,
+
+              total = width1 + width3 + width4,
+              proportion1: width1 / total,
+              proportion3: width3 / total,
+              proportion4: width4 / total,
+              width1: width1 * proportion1,
+              width3: width3 * proportion3,
+              width4: width4 * proportion4,
             });
-            checkWidth(e.id);
+            //checkWidth(e.id);
           }}
         >
           <div
@@ -201,9 +210,17 @@ class App extends React.Component {
             this.setState({
               width3: ref.offsetWidth,
               height3: ref.offsetHeight,
-              x4: x4
+              x4: x4,
+
+              total: width1 + width2 + width4,
+              proportion1: width1 / total,
+              proportion2: width2 / total,
+              proportion4: width4 / total,
+              width1: width1 * proportion1,
+              width2: width2 * proportion2,
+              width4: width4 * proportion4,
             });
-            checkWidth(e.id);
+            //checkWidth(e.id);
           }}
         >
           <div
@@ -244,8 +261,16 @@ class App extends React.Component {
             this.setState({
               width4: ref.offsetWidth,
               height4: ref.offsetHeight,
+
+              total: width1 + width2 + width3,
+              proportion1: width1 / total,
+              proportion2: width2 / total,
+              proportion3: width3 / total,
+              width1: width1 * proportion2,
+              width2: width2 * proportion3,
+              width3: width3 * proportion4,
             });
-            checkWidth(e.id);
+            //checkWidth(e.id);
           }}
         >
           <div
