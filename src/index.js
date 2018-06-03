@@ -160,7 +160,7 @@ class App extends React.Component {
               x3: x3,
               x4: x4,
 
-              total = width1 + width3 + width4,
+              total: width1 + width3 + width4,
               proportion1: width1 / total,
               proportion3: width3 / total,
               proportion4: width4 / total,
