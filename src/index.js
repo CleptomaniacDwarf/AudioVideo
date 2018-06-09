@@ -258,7 +258,7 @@ class App extends React.Component {
               muted={this.state.player1Mute}
               onStart={this.player1Started}
               width="auto"
-              height="auto"
+              height={720}
               url={
                 "https://sftp.hs-furtwangen.de/~kroenert/AudioVideo/VeralteteVideos/Melody.mp4"
               }
