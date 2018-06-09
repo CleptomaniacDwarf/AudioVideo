@@ -257,6 +257,7 @@ class App extends React.Component {
               volume={this.state.width1 / 640}
               muted={this.state.player1Mute}
               onStart={this.player1Started}
+              
               width="auto"
               height={720}
               url={
