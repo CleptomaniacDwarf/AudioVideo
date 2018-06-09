@@ -115,6 +115,60 @@ class App extends React.Component {
     console.log(`Player 4 started at ${Date.now()}`);
   };
 
+  setVolume1 = () => {
+  var returnV = this.SetVolume(this.state.width1)
+  return returnV
+  }
+
+  setVolume2 = () => {
+    var returnV = this.SetVolume(this.state.width2)
+    return returnV
+  }
+
+  setVolume3 = () => {
+    var returnV = this.SetVolume(this.state.width3)
+    return returnV
+  }
+
+  setVolume4 = () => {
+    var returnV = this.SetVolume(this.state.width4)
+    return returnV
+  }
+
+  SetVolume = (widthValue) => {
+    switch (widthValue) {
+      case 213.33:
+        return 0.0;
+        break;
+      case 216:
+        return 0.1;
+        break;
+      case 308.67:
+        return 0.2;
+        break;
+      case 356.34:
+        return 0.3;
+        break;
+      case 404.01:
+        return 0.4;
+        break;
+      case 451.68:
+        return 0.5;
+        break;
+      case 499.35:
+        return 0.7;
+        break;
+      case 547.02:
+        return 0.8;
+        break;
+      case 594.69:
+        return 0.9;
+        break;
+      default:
+        return 1;
+        break;
+    }
+  }
 
   /*checkWidth(identity) {
     if (identity == "melody") {
@@ -235,7 +289,7 @@ class App extends React.Component {
               height: "720px",
               overflow: "hidden",
             }}
-            onClick={this.player1Mute}
+            //onClick={this.player1Mute}
           >
             <ReactPlayer
               playing={
@@ -254,10 +308,9 @@ class App extends React.Component {
                   }
                 }
               }}
-              volume={this.state.width1 / 640}
+              volume={this.setVolume1}
               muted={this.state.player1Mute}
               onStart={this.player1Started}
-              
               width="auto"
               height={720}
               url={
@@ -307,17 +360,33 @@ class App extends React.Component {
               overflow: "hidden",
             }}
           >
-            <video
-              autoPlay
-              style={{
-                objectFit: "cover",
-                width: "100%",
-                height: "100%"
+            <ReactPlayer
+              playing={
+                this.state.player1Ready &&
+                this.state.player2Ready &&
+                this.state.player3Ready &&
+                this.state.player4Ready &&
+                this.state.start
+              }
+              config={{
+                file: {
+                  attributes: {
+                    preload: "auto",
+                    onCanPlayThrough: this.player2Ready
+                  }
+                }
               }}
-            >
-              <source src="https://webuser.hs-furtwangen.de/~kroenert/AudioVideo/Bass.mp4" />
-              />
-            </video>
+              ref={this.state.player2}
+              muted={this.state.player2Mute}
+              volume={this.setVolume2}
+              onStart={this.player2Started}
+              //style="centered"
+              width="auto"
+              height={720}
+              url={
+                "https://sftp.hs-furtwangen.de/~kroenert/AudioVideo/AV_Video_Reisen_640x720.mp4"
+              }
+            />
           </div>
         </Rnd>
         <Rnd
@@ -359,17 +428,32 @@ class App extends React.Component {
               overflow: "hidden",
             }}
           >
-            <video
-              autoPlay
-              style={{
-                objectFit: "cover",
-                width: "100%",
-                height: "100%"
+            <ReactPlayer
+              playing={
+                this.state.player1Ready &&
+                this.state.player2Ready &&
+                this.state.player3Ready &&
+                this.state.player4Ready &&
+                this.state.start
+              }
+              ref={this.state.player3}
+              config={{
+                file: {
+                  attributes: {
+                    preload: "auto",
+                    onCanPlayThrough: this.player3Ready
+                  }
+                }
               }}
-            >
-              <source src="https://webuser.hs-furtwangen.de/~kroenert/AudioVideo/Drums.mp4" />
-              />
-            </video>
+              muted={this.state.player3Mute}
+              onStart={this.player3Started}
+              volume={this.setVolume3}
+              width="auto"
+              height={720}
+              url={
+                "https://sftp.hs-furtwangen.de/~kroenert/AudioVideo/VeralteteVideos/Drums.mp4"
+              }
+            />
           </div>
         </Rnd>
 
@@ -409,17 +493,32 @@ class App extends React.Component {
               overflow: "hidden",
             }}
           >
-            <video
-              autoPlay
-              style={{
-                objectFit: "cover",
-                width: "100%",
-                height: "100%"
+            <ReactPlayer
+              playing={
+                this.state.player1Ready &&
+                this.state.player2Ready &&
+                this.state.player3Ready &&
+                this.state.player4Ready &&
+                this.state.start
+              }
+              config={{
+                file: {
+                  attributes: {
+                    preload: "auto",
+                    onCanPlayThrough: this.player4Ready
+                  }
+                }
               }}
-            >
-              <source src="https://webuser.hs-furtwangen.de/~kroenert/AudioVideo/Vox.mp4" />
-              />
-            </video>
+              ref={this.state.player4}
+              onStart={this.player4Started}
+              muted={this.state.player4Mute}
+              volume={this.setVolume4}
+              width="auto"
+              height={720}
+              url={
+                "https://sftp.hs-furtwangen.de/~kroenert/AudioVideo/VeralteteVideos/Vox.mp4"
+              }
+            />
           </div>
         </Rnd>
       </div>
