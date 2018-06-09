@@ -270,10 +270,11 @@ class App extends React.Component {
               muted={this.state.player2Mute}
               volume={this.state.width2 / 640}
               onStart={this.player2Started}
+              //style="centered"
               width="auto"
               height={720}
               url={
-                "https://sftp.hs-furtwangen.de/~kroenert/AudioVideo/VeralteteVideos/Bass.mp4"
+                "https://sftp.hs-furtwangen.de/~kroenert/AudioVideo/AV_Video_Reisen_640x720.mp4"
               }
             />
           </div>
