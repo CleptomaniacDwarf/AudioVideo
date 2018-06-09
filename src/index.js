@@ -133,7 +133,7 @@ class App extends React.Component {
     ) {
       console.log("All videos are playing");
 
-      this.setState({initialPlay: false});
+      setTimeout( () => this.setState({initialPlay: false}), 10);
 
       setTimeout(() => {
         this.state.player1.current.seekTo(0);
@@ -173,11 +173,7 @@ class App extends React.Component {
               x3: x3,
               x4: x4,
               //Breitenberechnung
-              total: 1280 - ref.offsetWidth,
-
-              width2: this.state.width2,
-              width3: this.state.width3,
-              width4: this.state.width4
+          
             });
             //checkWidth(e.id);
           }}
@@ -188,7 +184,7 @@ class App extends React.Component {
               height: "720px",
               overflow: "hidden"
             }}
-            onClick={this.player1Mute}
+            //onClick={this.player1Mute}
           >
             <ReactPlayer
               playing={
@@ -211,7 +207,7 @@ class App extends React.Component {
               muted={this.state.player1Mute}
               onStart={this.player1Started}
               width="auto"
-              height="auto"
+              height={720}
               url={
                 "https://sftp.hs-furtwangen.de/~kroenert/AudioVideo/VeralteteVideos/Melody.mp4"
               }
@@ -241,10 +237,7 @@ class App extends React.Component {
               x3: x3,
               x4: x4,
 
-              total: this.state.width1 + this.state.width3 + this.state.width4,
-              width1: this.state.width1,
-              width3: this.state.width3,
-              width4: this.state.width4
+              
             });
             //checkWidth(e.id);
           }}
@@ -255,7 +248,7 @@ class App extends React.Component {
               height: "720px",
               overflow: "hidden"
             }}
-            onClick={this.player2Mute}
+            //onClick={this.player2Mute}
           >
             <ReactPlayer
               playing={
@@ -278,7 +271,7 @@ class App extends React.Component {
               volume={this.state.width2 / 640}
               onStart={this.player2Started}
               width="auto"
-              height="auto"
+              height={720}
               url={
                 "https://sftp.hs-furtwangen.de/~kroenert/AudioVideo/VeralteteVideos/Bass.mp4"
               }
@@ -306,10 +299,6 @@ class App extends React.Component {
               height3: ref.offsetHeight,
               x4: x4,
 
-              total: this.state.width1 + this.state.width2 + this.state.width4,
-              width1: this.state.width1,
-              width2: this.state.width2,
-              width4: this.state.width4
             });
             //checkWidth(e.id);
           }}
@@ -320,7 +309,7 @@ class App extends React.Component {
               height: "720px",
               overflow: "hidden"
             }}
-            onClick={this.player3Mute}
+            //onClick={this.player3Mute}
           >
             <ReactPlayer
               playing={
@@ -343,7 +332,7 @@ class App extends React.Component {
               onStart={this.player3Started}
               volume={this.state.width3 / 640}
               width="auto"
-              height="auto"
+              height={720}
               url={
                 "https://sftp.hs-furtwangen.de/~kroenert/AudioVideo/VeralteteVideos/Drums.mp4"
               }
@@ -369,10 +358,7 @@ class App extends React.Component {
               width4: ref.offsetWidth,
               height4: ref.offsetHeight,
 
-              total: this.state.width1 + this.state.width2 + this.state.width3,
-              width1: this.state.width1,
-              width2: this.state.width2,
-              width3: this.state.width3
+          
             });
             //checkWidth(e.id);
           }}
@@ -383,7 +369,7 @@ class App extends React.Component {
               height: "720px",
               overflow: "hidden"
             }}
-            onClick={this.player4Mute}
+            //onClick={this.player4Mute}
           >
             <ReactPlayer
               playing={
@@ -406,7 +392,7 @@ class App extends React.Component {
               muted={this.state.player4Mute}
               volume={this.state.width4 / 640}
               width="auto"
-              height="auto"
+              height={720}
               url={
                 "https://sftp.hs-furtwangen.de/~kroenert/AudioVideo/VeralteteVideos/Vox.mp4"
               }
