@@ -239,7 +239,8 @@ class App extends React.Component {
                   }
                 }
               }}
-              volume={this.SetVolume(this.state.width1)}
+              //volume={this.SetVolume(this.state.width1)}
+              volume={this.state.width1/640}
               muted={this.state.player1Mute}
               onStart={this.player1Started}
               width="auto"
@@ -304,7 +305,8 @@ class App extends React.Component {
               }}
               ref={this.state.player2}
               muted={this.state.player2Mute}
-              volume={this.SetVolume(this.state.width2)}
+              volume={this.state.width2 / 640}
+              //volume={this.SetVolume(this.state.width2)}
               onStart={this.player2Started}
               width="auto"
               height={720}
@@ -366,7 +368,8 @@ class App extends React.Component {
               }}
               muted={this.state.player3Mute}
               onStart={this.player3Started}
-              volume={this.SetVolume(this.state.width3)}
+              //volume={this.SetVolume(this.state.width3)}
+              volume={this.state.width3 / 640}
               width="auto"
               height={720}
               url={
@@ -426,7 +429,8 @@ class App extends React.Component {
               ref={this.state.player4}
               onStart={this.player4Started}
               muted={this.state.player4Mute}
-              volume={this.SetVolume(this.state.width4)}
+              //volume={this.SetVolume(this.state.width4)}
+              volume={this.state.width4 / 640}
               width="auto"
               height={720}
               url={
