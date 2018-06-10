@@ -143,7 +143,7 @@ class App extends React.Component {
       case 597.36:
         return 1;
         break;
-    }
+    } 
   }
 
 
@@ -246,7 +246,7 @@ class App extends React.Component {
               width="auto"
               height={720}
               url={
-                "https://webuser.hs-furtwangen.de/~kroenert/AudioVideo/Melody_neu.mp4"
+                "https://webuser.hs-furtwangen.de/~kroenert/AudioVideo/Melody_final_2.mp4"
               }
             />
           </div>
