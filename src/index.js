@@ -114,33 +114,33 @@ class App extends React.Component {
   SetVolume = (widthValue) => {
     switch (widthValue) {
       case 213.33:
-        return 0.0;
+        return 0.05;
         break;
-      case 216:
+      case 256:
         return 0.1;
         break;
-      case 308.67:
+      case 298.67:
         return 0.2;
         break;
-      case 356.34:
+      case 341.34:
         return 0.3;
         break;
-      case 404.01:
+      case 384.01:
         return 0.4;
         break;
-      case 451.68:
+      case 426.68:
         return 0.5;
         break;
-      case 499.35:
+      case 469.35:
         return 0.7;
         break;
-      case 547.02:
+      case 512.02:
         return 0.8;
         break;
-      case 594.69:
+      case 554.69:
         return 0.9;
         break;
-      default:
+      case 597.36:
         return 1;
         break;
     }
@@ -245,7 +245,7 @@ class App extends React.Component {
               width="auto"
               height={720}
               url={
-                "https://sftp.hs-furtwangen.de/~kroenert/AudioVideo/VeralteteVideos/Melody.mp4"
+                "https://webuser.hs-furtwangen.de/~kroenert/AudioVideo/Melody_final.mp4"
               }
             />
           </div>
@@ -371,7 +371,7 @@ class App extends React.Component {
               height={720}
               url={
                 "https://sftp.hs-furtwangen.de/~kroenert/AudioVideo/VeralteteVideos/Drums.mp4"
-              }
+              } 
             />
           </div>
         </Rnd>
