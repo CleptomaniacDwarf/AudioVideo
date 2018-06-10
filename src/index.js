@@ -111,6 +111,42 @@ class App extends React.Component {
     console.log(`Player 4 started at ${Date.now()}`);
   };
 
+  SetVolume = (widthValue) => {
+    switch (widthValue) {
+      case 213.33:
+        return 0.0;
+        break;
+      case 216:
+        return 0.1;
+        break;
+      case 308.67:
+        return 0.2;
+        break;
+      case 356.34:
+        return 0.3;
+        break;
+      case 404.01:
+        return 0.4;
+        break;
+      case 451.68:
+        return 0.5;
+        break;
+      case 499.35:
+        return 0.7;
+        break;
+      case 547.02:
+        return 0.8;
+        break;
+      case 594.69:
+        return 0.9;
+        break;
+      default:
+        return 1;
+        break;
+    }
+  }
+
+
   render() {
     if (
       this.state.player1Ready &&
@@ -203,7 +239,7 @@ class App extends React.Component {
                   }
                 }
               }}
-              volume={this.state.width1 / 640}
+              volume={this.SetVolume(this.state.width1)}
               muted={this.state.player1Mute}
               onStart={this.player1Started}
               width="auto"
@@ -268,9 +304,8 @@ class App extends React.Component {
               }}
               ref={this.state.player2}
               muted={this.state.player2Mute}
-              volume={this.state.width2 / 640}
+              volume={this.SetVolume(this.state.width2)}
               onStart={this.player2Started}
-              //style="centered"
               width="auto"
               height={720}
               url={
@@ -331,7 +366,7 @@ class App extends React.Component {
               }}
               muted={this.state.player3Mute}
               onStart={this.player3Started}
-              volume={this.state.width3 / 640}
+              volume={this.SetVolume(this.state.width3)}
               width="auto"
               height={720}
               url={
@@ -391,7 +426,7 @@ class App extends React.Component {
               ref={this.state.player4}
               onStart={this.player4Started}
               muted={this.state.player4Mute}
-              volume={this.state.width4 / 640}
+              volume={this.SetVolume(this.state.width4)}
               width="auto"
               height={720}
               url={
