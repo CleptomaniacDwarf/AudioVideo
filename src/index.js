@@ -30,10 +30,6 @@ class App extends React.Component {
       x4: 970,
       y4: 10,
       total: 1280,
-      proportion1: 1,
-      proportion2: 1,
-      proportion3: 1,
-      proportion4: 1,
       player1Ready: false,
       player2Ready: false,
       player3Ready: false,
@@ -115,100 +111,41 @@ class App extends React.Component {
     console.log(`Player 4 started at ${Date.now()}`);
   };
 
-  setVolume1 = () => {
-  var returnV = this.SetVolume(this.state.width1)
-  return returnV
-  }
-
-  setVolume2 = () => {
-    var returnV = this.SetVolume(this.state.width2)
-    return returnV
-  }
-
-  setVolume3 = () => {
-    var returnV = this.SetVolume(this.state.width3)
-    return returnV
-  }
-
-  setVolume4 = () => {
-    var returnV = this.SetVolume(this.state.width4)
-    return returnV
-  }
-
   SetVolume = (widthValue) => {
     switch (widthValue) {
       case 213.33:
-        return 0.0;
+        return 0.05;
         break;
-      case 216:
+      case 256:
         return 0.1;
         break;
-      case 308.67:
+      case 298.67:
         return 0.2;
         break;
-      case 356.34:
+      case 341.34:
         return 0.3;
         break;
-      case 404.01:
+      case 384.01:
         return 0.4;
         break;
-      case 451.68:
+      case 426.68:
         return 0.5;
         break;
-      case 499.35:
+      case 469.35:
         return 0.7;
         break;
-      case 547.02:
+      case 512.02:
         return 0.8;
         break;
-      case 594.69:
+      case 554.69:
         return 0.9;
         break;
-      default:
+      case 597.36:
         return 1;
         break;
     }
   }
 
-  /*checkWidth(identity) {
-    if (identity == "melody") {
-      this.state.total = this.state.width2 + this.state.width3 + this.state.width4;
-      this.state.proportion2 = this.state.width2 / this.state.total;
-      this.state.proportion3 = this.state.width3 / this.state.total;
-      this.state.proportion4 = this.state.width4 / this.state.total;
-      this.state.width2 = this.state.width2 * this.state.proportion2;
-      this.state.width3 = this.state.width3 * this.state.proportion3;
-      this.state.width4 = this.state.width4 * this.state.proportion4;
-    }
-    if (identity == "bass") {
-      this.state.total = this.state.width1 + this.state.width3 + this.state.width4;
-      this.state.proportion1 = this.state.width1 / this.state.total;
-      this.state.proportion3 = this.state.width3 / this.state.total;
-      this.state.proportion4 = this.state.width4 / this.state.total;
-      this.state.width1 = this.state.width1 * this.state.proportion1;
-      this.state.width3 = this.state.width3 * this.state.proportion3;
-      this.state.width4 = this.state.width4 * this.state.proportion4;
-    }
-    if (identity == "drums") {
-      this.state.total = this.state.width1 + this.state.width2 + this.state.width4;
-      this.state.proportion1 = this.state.width1 / this.state.total;
-      this.state.proportion2 = this.state.width2 / this.state.total;
-      this.state.proportion4 = this.state.width4 / this.state.total;
-      this.state.width1 = this.state.width1 * this.state.proportion1;
-      this.state.width2 = this.state.width2 * this.state.proportion2;
-      this.state.width4 = this.state.width4 * this.state.proportion4;
-    }
-    if (identity == "vox") {
-      this.state.total = this.state.width1 + this.state.width2 + this.state.width3;
-      this.state.proportion1 = this.state.width1 / this.state.total;
-      this.state.proportion2 = this.state.width2 / this.state.total;
-      this.state.proportion3 = this.state.width3 / this.state.total;
-      this.state.width1 = this.state.width1 * this.state.proportion2;
-      this.state.width2 = this.state.width2 * this.state.proportion3;
-      this.state.width3 = this.state.width3 * this.state.proportion4;
-    }
-  }
-  */
 
   render() {
     if (
@@ -232,7 +169,7 @@ class App extends React.Component {
     ) {
       console.log("All videos are playing");
 
-      setTimeout(() => this.setState({ initialPlay: false }), 5000);
+      setTimeout(() => this.setState({ initialPlay: false }), 10);
 
       setTimeout(() => {
         this.state.player1.current.seekTo(0);
@@ -241,22 +178,22 @@ class App extends React.Component {
         this.state.player4.current.seekTo(0);
       }, 100);
     }
-    
+
     return (
       <div>
         <Rnd
           id={"melody"}
           minWidth={213.33}
-          maxWidth={640} 
+          maxWidth={640}
           resizeGrid={[42.67, 1]}
           style={style}
           enableResizing={{
-            right: true,
+            right: true
           }}
-          size={{ 
-            width: this.state.width1, 
-            height: this.state.height1,
-            }}
+          size={{
+            width: this.state.width1,
+            height: this.state.height1
+          }}
           position={{ x: this.state.x1, y: this.state.y1 }}
           disableDragging
           onResize={(e, direction, ref, delta, position) => {
@@ -264,22 +201,16 @@ class App extends React.Component {
             const x3 = x2 + this.state.width2;
             const x4 = x3 + this.state.width3;
             //debugger;
-            
+
             this.setState({
               //Positionierung
               width1: ref.offsetWidth,
               x2: x2,
               x3: x3,
               x4: x4,
-             //Breitenberechnung
-              //total: 1280 - ref.offsetWidth,
-              //proportion2: this.state.width2 / this.state.total,
-              //proportion3: this.state.width3 / this.state.total,
-              //proportion4: this.state.width4 / this.state.total,
-              //width2: this.state.width2 * this.state.proportion2,
-              //width3: this.state.width3 * this.state.proportion3,
-              //width4: this.state.width4 * this.state.proportion4, --!>
-             });
+              //Breitenberechnung
+
+            });
             //checkWidth(e.id);
           }}
         >
@@ -287,9 +218,9 @@ class App extends React.Component {
             style={{
               width: this.state.width1,
               height: "720px",
-              overflow: "hidden",
+              overflow: "hidden"
             }}
-            //onClick={this.player1Mute}
+          //onClick={this.player1Mute}
           >
             <ReactPlayer
               playing={
@@ -308,13 +239,13 @@ class App extends React.Component {
                   }
                 }
               }}
-              volume={this.setVolume1}
+              volume={this.SetVolume(this.state.width1)}
               muted={this.state.player1Mute}
               onStart={this.player1Started}
               width="auto"
               height={720}
               url={
-                "https://sftp.hs-furtwangen.de/~kroenert/AudioVideo/VeralteteVideos/Melody.mp4"
+                "https://webuser.hs-furtwangen.de/~kroenert/AudioVideo/Melody_final.mp4"
               }
             />
           </div>
@@ -322,7 +253,7 @@ class App extends React.Component {
         <Rnd
           id={"bass"}
           minWidth={213.33}
-          maxWidth={640} 
+          maxWidth={640}
           resizeGrid={[42.67, 1]}
           style={style}
           enableResizing={{
@@ -342,13 +273,7 @@ class App extends React.Component {
               x3: x3,
               x4: x4,
 
-              //total: this.state.width1 + this.state.width3 + this.state.width4,
-              //proportion1: this.state.width1 / this.state.total,
-              //proportion3: this.state.width3 / this.state.total,
-              //proportion4: this.state.width4 / this.state.total,
-              //width1: this.state.width1 * this.state.proportion1,
-              //width3: this.state.width3 * this.state.proportion3,
-              //width4: this.state.width4 * this.state.proportion4,
+
             });
             //checkWidth(e.id);
           }}
@@ -357,8 +282,9 @@ class App extends React.Component {
             style={{
               width: this.state.width2,
               height: "720px",
-              overflow: "hidden",
+              overflow: "hidden"
             }}
+          //onClick={this.player2Mute}
           >
             <ReactPlayer
               playing={
@@ -378,9 +304,8 @@ class App extends React.Component {
               }}
               ref={this.state.player2}
               muted={this.state.player2Mute}
-              volume={this.setVolume2}
+              volume={this.SetVolume(this.state.width2)}
               onStart={this.player2Started}
-              //style="centered"
               width="auto"
               height={720}
               url={
@@ -392,7 +317,7 @@ class App extends React.Component {
         <Rnd
           id={"drums"}
           minWidth={213.33}
-          maxWidth={640} 
+          maxWidth={640}
           resizeGrid={[42.67, 1]}
           style={style}
           enableResizing={{
@@ -410,13 +335,6 @@ class App extends React.Component {
               height3: ref.offsetHeight,
               x4: x4,
 
-              //total: this.state.width1 + this.state.width2 + this.state.width4,
-              //proportion1: this.state.width1 / this.state.total,
-              //proportion2: this.state.width2 / this.state.total,
-              //proportion4: this.state.width4 / this.state.total,
-              //width1: this.state.width1 * this.state.proportion1,
-              //width2: this.state.width2 * this.state.proportion2,
-              //width4: this.state.width4 * this.state.proportion4,
             });
             //checkWidth(e.id);
           }}
@@ -425,8 +343,9 @@ class App extends React.Component {
             style={{
               width: this.state.width3,
               height: "720px",
-              overflow: "hidden",
+              overflow: "hidden"
             }}
+          //onClick={this.player3Mute}
           >
             <ReactPlayer
               playing={
@@ -447,7 +366,7 @@ class App extends React.Component {
               }}
               muted={this.state.player3Mute}
               onStart={this.player3Started}
-              volume={this.setVolume3}
+              volume={this.SetVolume(this.state.width3)}
               width="auto"
               height={720}
               url={
@@ -460,8 +379,8 @@ class App extends React.Component {
         <Rnd
           id={"vox"}
           minWidth={213.33}
-          maxWidth={640}  
-          resizeGrid={[42.67, 1]}       
+          maxWidth={640}
+          resizeGrid={[42.67, 1]}
           style={style}
           enableResizing={{
             right: true
@@ -475,13 +394,7 @@ class App extends React.Component {
               width4: ref.offsetWidth,
               height4: ref.offsetHeight,
 
-              //total: this.state.width1 + this.state.width2 + this.state.width3,
-              //proportion1: this.state.width1 / this.state.total,
-              //proportion2: this.state.width2 / this.state.total,
-              //proportion3: this.state.width3 / this.state.total,
-              //width1: this.state.width1 * this.state.proportion2,
-              //width2: this.state.width2 * this.state.proportion3,
-              //width3: this.state.width3 * this.state.proportion4,
+
             });
             //checkWidth(e.id);
           }}
@@ -490,8 +403,9 @@ class App extends React.Component {
             style={{
               width: this.state.width4,
               height: "720px",
-              overflow: "hidden",
+              overflow: "hidden"
             }}
+          //onClick={this.player4Mute}
           >
             <ReactPlayer
               playing={
@@ -512,7 +426,7 @@ class App extends React.Component {
               ref={this.state.player4}
               onStart={this.player4Started}
               muted={this.state.player4Mute}
-              volume={this.setVolume4}
+              volume={this.SetVolume(this.state.width4)}
               width="auto"
               height={720}
               url={
