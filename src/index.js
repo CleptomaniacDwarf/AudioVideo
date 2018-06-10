@@ -434,7 +434,7 @@ class App extends React.Component {
               width="auto"
               height={720}
               url={
-                "https://sftp.hs-furtwangen.de/~kroenert/AudioVideo/VeralteteVideos/Vox.mp4"
+                "https://webuser.hs-furtwangen.de/~kroenert/AudioVideo/AV_Video_Status_640x720_final.mp4"
               }
             />
           </div>
